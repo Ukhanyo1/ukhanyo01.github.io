@@ -176,3 +176,22 @@ footer {
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
+/* Back to Top Button */
+.back-to-top {
+  display: none; /* hidden by default */
+  position: fixed;
+  bottom: 80px;
+  right: 25px;
+  background: #333;
+  color: #fff;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+
+
