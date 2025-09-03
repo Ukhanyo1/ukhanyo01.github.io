@@ -1,21 +1,15 @@
-// Smooth scrolling is handled by CSS scroll-behavior
-// Highlight active link
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+// Fade-in sections on scroll
+const sections = document.querySelectorAll('section');
 
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
 
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
+sections.forEach(section => {
+    section.classList.add('hidden');
+    observer.observe(section);
 });
