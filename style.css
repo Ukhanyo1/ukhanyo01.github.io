@@ -11,17 +11,28 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
     background: #f0f0f0;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+    padding: 15px 0;
 }
 
 header .logo {
@@ -73,13 +84,12 @@ header nav ul li a:hover {
 
 /* Sections */
 section {
-    padding: 100px 50px;
-    text-align: center;
+    padding: 100px 0;
 }
 
 #hero {
     background: #e0e0e0;
-    padding: 150px 50px;
+    padding: 150px 20px;
 }
 
 /* Section headings hover */
@@ -90,69 +100,6 @@ section h2 {
 section:hover h2 {
     color: #007bff;
     text-shadow: 0 0 5px #007bff;
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-}
-
-footer .social-icons {
-    margin-bottom: 10px;
-}
-
-footer .social-icons a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 24px;
-    transition: all 0.3s ease;
-}
-
-footer .social-icons a:hover {
-    color: #007bff;
-    transform: translateY(-5px) scale(1.2);
-}
-
-/* Scroll fade-in effect */
-.hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
-    }
-
-    .top-buttons {
-        margin-top: 10px;
-        flex-wrap: wrap;
-    }
-
-    section {
-        padding: 80px 20px;
-    }
-
-    #hero {
-        padding: 120px 20px;
-    }
 }
 
 /* Projects Grid */
@@ -215,4 +162,90 @@ footer .social-icons a:hover {
     background: #007bff;
     box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
     transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .social-icons {
+    margin-bottom: 10px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #007bff;
+    transform: translateY(-5px) scale(1.2);
+}
+
+/* Scroll fade-in effect */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .top-buttons {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    #hero {
+        padding: 120px 20px;
+    }
+}
+
+/* Floating Contact Button */
+.floating-contact {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #007bff;
+    color: #fff;
+    font-size: 22px;
+    padding: 18px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.floating-contact:hover {
+    background: #0056b3;
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
