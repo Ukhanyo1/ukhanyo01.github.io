@@ -3,22 +3,71 @@
 body { font-family: Arial, sans-serif; background: #0d1b2a; color: #e0e1dd; }
 
 /* Navigation */
-header { background: #1b263b; padding: 1rem 3rem; position: sticky; top: 0; z-index: 100; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
-.logo { color: #fff; }
-nav a { margin-left: 1.5rem; color: #e0e1dd; text-decoration: none; font-weight: bold; }
-nav a.active, nav a:hover { color: #ffb703; }
-.btn { background: #ffb703; color: #0d1b2a; padding: 0.6rem 1rem; border-radius: 5px; text-decoration: none; font-weight: bold; }
-.btn-outline { border: 2px solid #ffb703; color: #ffb703; padding: 0.6rem 1rem; border-radius: 5px; text-decoration: none; font-weight: bold; }
+/* Navigation Hover */
+nav a {
+  margin-left: 1.5rem;
+  color: #e0e1dd;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #ffb703;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffb703;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Button Hover */
+.btn, .btn-outline {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ffd166;
+  box-shadow: 0 0 15px #ffb703;
+  transform: scale(1.05);
+}
+
+.btn-outline:hover {
+  background: #ffb703;
+  color: #0d1b2a;
+  box-shadow: 0 0 15px #ffb703;
+  transform: scale(1.05);
+}
+
 
 /* Hero */
-.hero { display: flex; justify-content: space-between; align-items: center; padding: 5rem 3rem; }
-.hero-text { max-width: 50%; }
-.hero-text h1 { font-size: 3rem; color: #ffb703; }
-.hero-text h3 { margin: 1rem 0; }
-.hero-buttons { margin-top: 1.5rem; }
-.hero-buttons a { margin-right: 1rem; }
-.hero-image img { width: 280px; border-radius: 50%; box-shadow: 0 0 30px #ffb703; }
+/* Profile Image Hover Effect */
+.hero-image img {
+  width: 280px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #ffb703;
+  transition: all 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 0 50px #ffd166, 0 0 80px #ffb703;
+}
+
 
 /* Stats */
 .stats { display: flex; justify-content: space-around; background: #1b263b; padding: 2rem 0; margin-top: 2rem; }
@@ -31,4 +80,5 @@ nav a.active, nav a:hover { color: #ffb703; }
 
 /* Footer */
 footer { text-align: center; background: #1b263b; padding: 1rem; }
+
 
